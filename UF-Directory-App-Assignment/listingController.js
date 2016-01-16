@@ -21,9 +21,15 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.detailedInfo = $scope.listings[index];
       if ($scope.detailedInfo.coordinates === undefined) {
         $scope.detailedInfo.coordinates =  {
-          "latitude": "N/A", 
-          "longitude": "N/A"
+          "latitude": "N/A",
+          "longitude":"N/A"
         };
+      }
+      if ($scope.detailedInfo.coordinates.latitude === undefined) {
+        $scope.detailedInfo.coordinates.latitude =  "N/A"
+      }
+      if ($scope.detailedInfo.coordinates.longitude === undefined) {
+        $scope.detailedInfo.coordinates.longitude =  "N/A"
       }
       if ($scope.detailedInfo.address === undefined) {
         $scope.detailedInfo.address = "N/A";
